@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="proyecto433.views.LoginPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="proyecto433">
+    <ContentPage.Content>
+        <ScrollView
+           BindingContext="{Binding Login}">
+            <StackLayout
+            Padding="5">
+                <Label 
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                TextColor="Navy"
+                Text="Diabetips">
+                </Label>
+                <Image
+                Source="az1"
+                WidthRequest="150">
+                </Image>
+                <Label 
+                FontSize="Large"
+                Text="E-Mail">
+                </Label>
+                <Entry
+                   Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                   Placeholder="Ingrese su Correo...">
+                </Entry>
+                <Label 
+                   FontSize="Large"
+                   Text="Password">
+                </Label>
+                <Entry
+                      IsPassword="True"  
+                    Text="{Binding password, Mode=TwoWay}"
+                   Placeholder="Ingrese su Password...">
+                </Entry>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
+                <StackLayout
+                    Margin="10,0"
+                    Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="Rememberme in this device"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                        HorizontalOptions="End">
+                    </Switch>
+                </StackLayout>
+                <Button
+                    BackgroundColor="Navy"
+                    BorderRadius="50"
+                    Command="{Binding LoginCommand}"
+                    Text="Iniciar"
+                    TextColor="White">
+                </Button>
+                <Label 
+                HorizontalOptions="Center"
+                Text="*Registro rápido y facil">
+                </Label>
+                <Button
+                    BackgroundColor="Gray"
+                    BorderRadius="50"
+                    Text="Registrar"
+                    TextColor="White">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
